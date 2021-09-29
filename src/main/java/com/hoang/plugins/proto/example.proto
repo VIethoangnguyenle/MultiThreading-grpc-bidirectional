@@ -1,0 +1,27 @@
+syntax = "proto3";
+option java_package = "com.hoang";
+
+service ExampleService {
+  rpc Connect (stream RequestCall) returns (stream ResponseCall) {}
+  rpc Communicate(stream DevCall) returns (stream SirCall) {}
+}
+
+message RequestCall {
+  string requestId = 1;
+  int32 numCall = 2;
+}
+
+message ResponseCall {
+  string requestId = 1;
+  int32 numRep = 2;
+}
+
+message DevCall {
+  string requestId = 1;
+  int32 numCall = 2;
+}
+
+message SirCall {
+  string requestId = 1;
+  int32 numCall = 2;
+}
